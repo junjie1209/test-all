@@ -1,0 +1,49 @@
+# Compiled Class Files
+*.class
+
+# Log Files
+applogs/
+logs/
+*.log
+
+# Temp Files
+temp/
+tmp/
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Virtual Machine Crash Logs
+hs_err_pid*
+
+# Eclipse IDE Files
+.settings/
+.project
+.classpath
+.factorypath
+.metadata/
+RemoteSystemsTempFiles/
+
+# Idea IDE Files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Maven Files
+target/
+!galaxy-gemini-compress/src/main/java/com/nantian/galaxy/gemini/compress/archive2/target/
+.flattened-pom.xml
+dependency-reduced-pom.xml
+
+# Mac OS Files
+.DS_Store/
+
+# SVN Files
+.svn/
