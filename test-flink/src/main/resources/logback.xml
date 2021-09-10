@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{60} %X{sourceThread} - %msg%n"/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="console"/>
+    </root>
+
+    <logger name="org.apache.flink.runtime.taskmanager.Task" level="INFO">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.apache.kafka.clients.consumer.ConsumerConfig" level="ERROR">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.apache.hadoop" level="INFO">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <!-- Suppress the irrelevant (wrong) warnings from the Netty channel handler -->
+    <logger name="org.apache.flink.shaded.akka.org.jboss.netty.channel.DefaultChannelPipeline" level="ERROR">
+        <appender-ref ref="console"/>
+    </logger>
+
+</configuration>
