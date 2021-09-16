@@ -16,13 +16,13 @@ public class Example {
         TableEnvironment tableEnv = TableEnvironment.create(settings);
 
         String name            = "myhive";
-        String defaultDatabase = "mydatabase";
-        String hiveConfDir     = "/opt/hive-conf";
+        String defaultDatabase = "default";
+        String hiveConfDir     = "test-all/test-flink/src/main/resources/";
 
         HiveCatalog hive = new HiveCatalog(name, defaultDatabase, hiveConfDir);
         tableEnv.registerCatalog("myhive", hive);
 
-// set the HiveCatalog as the current catalog of the session
+        // set the HiveCatalog as the current catalog of the session
         tableEnv.useCatalog("myhive");
     }
 }
