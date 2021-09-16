@@ -3,6 +3,8 @@ package com.test.flink.sql.stream.job;
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.TableEnvironment;
 
+import com.test.flink.sql.stream.job.udf.StringToTimestampUdf;
+
 /**
  * kafka csv to mysql
  *
@@ -16,6 +18,8 @@ public class KafkaCsvToMysql {
                 .inStreamingMode()
                 .build();
         TableEnvironment tableEnv = TableEnvironment.create(settings);
+
+        tableEnv.createFunction("StringToTimestampUdf", StringToTimestampUdf.class);
 
         String ddlSource = "CREATE TABLE kafka_source (\n" +
                 "    `name` STRING,\n" +
@@ -61,7 +65,7 @@ public class KafkaCsvToMysql {
                 "tel,\n" +
                 "age,\n" +
                 "pay,\n" +
-                "`date`,\n" +
+                "StringToTimestampUdf(`date`),\n" +
                 "tags,\n" +
                 "comments,\n	" +
                 "`lover.name`,\n" +
