@@ -65,7 +65,7 @@ public class KafkaCsvToMysql {
                 "tel,\n" +
                 "age,\n" +
                 "pay,\n" +
-                "StringToTimestampUdf(`date`),\n" +
+                "StringToTimestampUdf(`date`,'GMT+8'),\n" +
                 "tags,\n" +
                 "comments,\n	" +
                 "`lover.name`,\n" +

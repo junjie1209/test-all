@@ -13,9 +13,9 @@ import java.time.ZoneId;
  * @date: 2021/9/14
  */
 public class StringToTimestampUdf extends ScalarFunction {
-    public String eval(String date){
+    public String eval(String date,String zoneId){
         OffsetDateTime offsetDateTime = OffsetDateTime.parse(date);
-        LocalDateTime localDateTime = LocalDateTime.ofInstant(offsetDateTime.toInstant(), ZoneId.of("GMT+8"));
+        LocalDateTime localDateTime = LocalDateTime.ofInstant(offsetDateTime.toInstant(), ZoneId.of(zoneId));
         return localDateTime.toString();
     }
 }
