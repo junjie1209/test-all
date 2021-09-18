@@ -1,9 +1,8 @@
 package com.test.flink.sql.stream.job;
 
+import com.test.flink.sql.stream.job.udf.StringToTimestampUdf;
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.TableEnvironment;
-
-import com.test.flink.sql.stream.job.udf.StringToTimestampUdf;
 
 /**
  * kafka csv to mysql
@@ -15,11 +14,13 @@ public class KafkaCsvToMysql {
     public static void main(String[] args) throws Exception {
         EnvironmentSettings settings = EnvironmentSettings
                 .newInstance()
+                .useBlinkPlanner()
                 .inStreamingMode()
                 .build();
         TableEnvironment tableEnv = TableEnvironment.create(settings);
+        tableEnv.getConfig().getConfiguration().setString("pipeline.name", "Common.jobName");
 
-        tableEnv.createFunction("StringToTimestampUdf", StringToTimestampUdf.class);
+        tableEnv.createFunction("stringToTimestampUdf", StringToTimestampUdf.class);
 
         String ddlSource = "CREATE TABLE kafka_source (\n" +
                 "    `name` STRING,\n" +
@@ -32,12 +33,12 @@ public class KafkaCsvToMysql {
                 "    `lover.name` STRING,\n" +
                 "    `lover.gender` STRING\n" +
                 ") WITH (\n" +
-                "    'connector' = 'kafka', -- 使用 kafka connector\n" +
-                "    'topic' = 'test-zjj-flink-job1-kafkaCsv',  -- kafka topic\n" +
+                "    'connector' = 'kafka',\n" +
+                "    'topic' = 'test-zjj-flink-job1-kafkaCsv',\n" +
                 "    'properties.bootstrap.servers' = '10.12.40.1:9092',\n" +
                 "    'properties.group.id' = '1001',\n" +
-                "    'scan.startup.mode' = 'latest-offset',  -- 读取数据的位置\n" +
-                "    'format' = 'csv'  -- 数据源格式为 json\n" +
+                "    'scan.startup.mode' = 'latest-offset',\n" +
+                "    'format' = 'csv'\n" +
                 ")";
 
         String ddlSink = "CREATE TABLE mysql_sink (\n" +
@@ -65,7 +66,7 @@ public class KafkaCsvToMysql {
                 "tel,\n" +
                 "age,\n" +
                 "pay,\n" +
-                "StringToTimestampUdf(`date`,'GMT+8'),\n" +
+                "stringToTimestampUdf(`date`,'GMT+8'),\n" +
                 "tags,\n" +
                 "comments,\n	" +
                 "`lover.name`,\n" +

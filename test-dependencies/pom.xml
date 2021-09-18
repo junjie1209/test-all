@@ -26,7 +26,6 @@
         <mysql-connector-java.version>8.0.16</mysql-connector-java.version>
         <hadoop.version>2.6.0</hadoop.version>
         <junit-jupiter-api.version>5.7.0</junit-jupiter-api.version>
-
     </properties>
 
     <dependencyManagement>

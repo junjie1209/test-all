@@ -47,3 +47,5 @@ dependency-reduced-pom.xml
 
 # SVN Files
 .svn/
+
+/test-temp/

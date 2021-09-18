@@ -7,7 +7,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 
 /**
- * 将Map<String,String>转换为String
+ * 根据入参zoneId将入参date转换为对应时区时间
  *
  * @author: Junjie Zhang
  * @date: 2021/9/14
