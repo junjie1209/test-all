@@ -13,6 +13,8 @@
         <module>test-designpatterns</module>
         <module>test-temp</module>
         <module>test-flink</module>
+        <module>test-kafka</module>
+        <module>test-azkaban</module>
     </modules>
 
     <properties>

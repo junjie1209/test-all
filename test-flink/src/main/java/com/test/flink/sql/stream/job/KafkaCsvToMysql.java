@@ -14,7 +14,6 @@ public class KafkaCsvToMysql {
     public static void main(String[] args) throws Exception {
         EnvironmentSettings settings = EnvironmentSettings
                 .newInstance()
-                .useBlinkPlanner()
                 .inStreamingMode()
                 .build();
         TableEnvironment tableEnv = TableEnvironment.create(settings);
