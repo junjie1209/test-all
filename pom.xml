@@ -15,11 +15,14 @@
         <module>test-flink</module>
         <module>test-kafka</module>
         <module>test-azkaban</module>
+        <module>test-weburl</module>
+        <module>test-kettle</module>
+        <module>test-hdfs</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <test-dependencies.version>1.0.0-SNAPSHOT</test-dependencies.version>
     </properties>
 
