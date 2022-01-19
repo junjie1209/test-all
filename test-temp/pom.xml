@@ -18,6 +18,15 @@
 
     <dependencies>
         <dependency>
+            <groupId></groupId>
+            <artifactId>struts2-spring-po</artifactId>
+        </dependency>
+
+
+
+
+
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
