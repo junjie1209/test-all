@@ -19,6 +19,7 @@
         <module>test-kettle</module>
         <module>test-hdfs</module>
         <module>test-concurrence</module>
+        <module>test-springboot</module>
     </modules>
 
     <properties>
