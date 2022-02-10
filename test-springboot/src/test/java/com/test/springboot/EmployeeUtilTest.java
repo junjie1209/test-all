@@ -12,7 +12,7 @@ import java.io.IOException;
  * @author: Junjie Zhang
  * @date: 2022/1/19
  */
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
 public class EmployeeUtilTest {
     @Test
     public void testEmployeeUtil1() throws IOException {

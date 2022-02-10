@@ -21,6 +21,12 @@
         <module>test-concurrence</module>
         <module>test-springboot</module>
         <module>test-json</module>
+        <module>test-jdbc</module>
+        <module>test-jdbc/test-hikari</module>
+        <module>test-validation</module>
+        <module>test-ioc</module>
+        <module>test-log</module>
+        <module>test-mockito</module>
     </modules>
 
     <properties>

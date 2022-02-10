@@ -1,0 +1,21 @@
+server:
+  port: 8080
+##\u6570\u636E\u5E93\u8FDE\u63A5\u914D\u7F6E
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.12.40.38:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+    username: root
+    password: Galaxy_123
+    hikari:
+      pool-name: test-pool
+      minimum-idle: 5
+      maximum-pool-size: 20
+      idle-timeout: 30000
+      connection-test-query: SELECT 1
+  jpa:
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+
+
