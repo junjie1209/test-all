@@ -27,6 +27,9 @@
         <module>test-ioc</module>
         <module>test-log</module>
         <module>test-mockito</module>
+        <module>test-xml</module>
+        <module>test-java-util</module>
+        <module>test-ip</module>
     </modules>
 
     <properties>
