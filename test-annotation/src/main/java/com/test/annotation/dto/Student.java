@@ -1,10 +1,9 @@
 package com.test.annotation.dto;
 
+import com.test.annotation.validation.InetPattern;
 import lombok.Data;
+import org.springframework.validation.annotation.Validated;
 
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 /**
  * TODO
@@ -13,13 +12,14 @@ import javax.validation.constraints.Pattern;
  * @date: 2022/7/27
  */
 @Data
-@Valid
+@Validated
 public class Student {
     private String id;
 
-    @NotBlank
     private String userName;
 
-    @Pattern(regexp = "^[0-9]$", message = "num必须是数字")
     private String num;
+
+    @InetPattern(pattern = "((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})(\\.((2(5[0-5]|[0-4]\\d))|[0-1]?\\d{1,2})){3}", message = "字段必须为ip格式")
+    private String ip;
 }

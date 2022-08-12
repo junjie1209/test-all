@@ -22,6 +22,5 @@ public class RepeatMain {
         students.add(student2);
         students.add(student3);
 
-        if (students.contains())
     }
 }
