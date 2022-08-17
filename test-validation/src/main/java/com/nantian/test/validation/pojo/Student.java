@@ -1,10 +1,13 @@
 package com.nantian.test.validation.pojo;
 
+import com.nantian.test.validation.valodation.ValidGroup;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -17,7 +20,12 @@ import javax.validation.constraints.Size;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Person {
+public class Student {
+
+    @Null(message = "新增Student时，id只能为空", groups = ValidGroup.Crud.Create.class)
+    @NotNull(message = "修改Student时，id不能为空", groups = ValidGroup.Crud.Update.class)
+    private String id;
+
     @NotNull(message = "classId 不能为空")
     private String classId;
 
