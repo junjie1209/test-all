@@ -20,6 +20,7 @@
         <module>test-hdfs</module>
         <module>test-concurrence</module>
         <module>test-springboot</module>
+        <module>test-springboot-starter</module>
         <module>test-json</module>
         <module>test-jdbc</module>
         <module>test-jdbc/test-hikari</module>
@@ -32,6 +33,7 @@
         <module>test-ip</module>
         <module>test-compare-with-python</module>
         <module>test-annotation</module>
+        <module>test-gemini</module>
     </modules>
 
     <properties>
