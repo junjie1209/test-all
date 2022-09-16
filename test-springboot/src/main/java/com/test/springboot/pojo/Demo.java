@@ -9,9 +9,8 @@ import lombok.Data;
  * @date: 2022/1/19
  */
 @Data
-public class Employee {
+public class Demo {
     private int id;
     private String name;
     private int age;
-    private int salary;
 }

@@ -1,3 +1,4 @@
+/*
 package com.test.springboot;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,12 +10,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+*/
 /**
  * TODO
  *
  * @author: Junjie Zhang
  * @date: 2022/1/19
- */
+ *//*
+
 public class EmployeeUtil {
 
     public void testJsonToObject() throws IOException {
@@ -41,3 +44,4 @@ public class EmployeeUtil {
         System.out.println(employee.toString());
     }
 }
+*/
