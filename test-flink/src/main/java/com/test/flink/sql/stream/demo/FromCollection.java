@@ -15,9 +15,8 @@ import java.util.Arrays;
 public class FromCollection {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-        StreamTableEnvironment tableEnv = StreamTableEnvironment.create(env);
         DataStreamSource<String> stream = env.fromCollection(Arrays.asList("4", "5", "6"));
         stream.print("ds");
-        env.execute("dsd");
+        env.execute("123");
     }
 }
