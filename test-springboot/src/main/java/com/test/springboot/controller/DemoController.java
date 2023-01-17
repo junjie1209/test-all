@@ -2,10 +2,12 @@ package com.test.springboot.controller;
 
 import com.test.springboot.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 /**
  * TODO
@@ -34,9 +36,9 @@ public class DemoController {
         return demoService.addThreadLocal();
     }
 
-    @GetMapping("/reduce")
-    public Long reduceThreadLocal() {
-        return demoService.reduceThreadLocal();
+    @PostMapping("/test")
+    public void testRequestParam(@RequestBody String userName,@RequestBody String pwd) {
+        System.out.println(userName+pwd);
     }
 
 }
